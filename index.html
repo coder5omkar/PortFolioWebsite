@@ -640,6 +640,276 @@ section {
   font-size: 0.9rem;
 }
 
+/* ══════════════════════════════════════════════════════
+   ADHD SUPERPOWERS — Standout Marketing Section
+   Gold/amber accent to contrast main purple theme
+   ══════════════════════════════════════════════════════ */
+#adhd {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 2rem 6rem;
+  overflow: hidden;
+}
+
+/* Full-width background that bleeds edge-to-edge */
+#adhd::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(255,183,77,0.08), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 70%, rgba(255,152,0,0.06), transparent),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(245,87,108,0.04), transparent);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Top & bottom divider strips */
+#adhd::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffb74d, #ff9800, #ffb74d, transparent);
+  opacity: 0.25;
+}
+
+.adhd-divider-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffb74d, #ff9800, #ffb74d, transparent);
+  opacity: 0.25;
+}
+
+#adhd .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Badge */
+.adhd-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  border: 1px solid rgba(255,183,77,0.25);
+  color: #ffb74d;
+  background: rgba(255,183,77,0.06);
+  margin-bottom: 1.2rem;
+}
+
+/* Title */
+.adhd-title-block {
+  margin-bottom: 2.5rem;
+}
+
+.adhd-title-block h2 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.08;
+  margin-bottom: 0.3rem;
+}
+
+.adhd-title-block h2 .gold {
+  background: linear-gradient(135deg, #ffb74d, #ff9800, #ff6f00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.adhd-title-block .sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.05em;
+}
+
+/* Intro text */
+.adhd-intro {
+  max-width: 720px;
+  margin-bottom: 3.5rem;
+}
+
+.adhd-intro p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.adhd-intro p:last-child { margin-bottom: 0; }
+
+.adhd-intro strong {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Superpowers grid — 2 columns */
+.adhd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 900px) {
+  .adhd-grid { grid-template-columns: 1fr; }
+}
+
+/* Card styling */
+.adhd-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 1.8rem 1.8rem 1.8rem 2rem;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.adhd-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #ffb74d, #ff9800);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.adhd-card:hover {
+  border-color: rgba(255,183,77,0.2);
+  background: rgba(255,183,77,0.04);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+}
+
+.adhd-card:hover::before { opacity: 1; }
+
+.adhd-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.adhd-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  background: rgba(255,183,77,0.1);
+  color: #ffb74d;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,183,77,0.1);
+}
+
+.adhd-card-titles h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.15rem;
+}
+
+.adhd-card-titles .tagline {
+  font-size: 0.8rem;
+  color: rgba(255,183,77,0.7);
+  font-style: italic;
+}
+
+.adhd-card p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Intensity gauge */
+.intensity-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.intensity-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.2);
+  font-weight: 600;
+  min-width: 22px;
+}
+
+.intensity-bar {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+.intensity-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #ffb74d, #ff9800);
+  width: 0%;
+  transition: width 1s ease;
+}
+
+/* CTA block */
+.adhd-cta {
+  text-align: center;
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,183,77,0.1);
+  border-radius: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.adhd-cta h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.adhd-cta h3 .gold {
+  background: linear-gradient(135deg, #ffb74d, #ff9800);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.adhd-cta p {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #ffb74d, #ff9800);
+  color: #0a0a0f;
+  font-weight: 700;
+  box-shadow: 0 4px 25px rgba(255,152,0,0.25);
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 40px rgba(255,152,0,0.4);
+}
+
 /* ── Contact ── */
 .contact-grid {
   display: grid;
@@ -813,6 +1083,12 @@ footer {
   .projects-grid { grid-template-columns: 1fr; }
 
   section { padding: 3rem 1.5rem; }
+
+  #adhd { padding: 3.5rem 1.5rem 4rem; }
+
+  .adhd-card { padding: 1.4rem; }
+
+  .adhd-cta { padding: 2rem 1.2rem; }
 }
 </style>
 </head>
@@ -823,43 +1099,20 @@ footer {
 
 <!-- Navigation -->
 <nav id="navbar">
-  <div class="logo">Portfolio</div>
+  <div class="logo" id="logo-text">Portfolio</div>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <ul class="nav-links" id="navLinks"></ul>
 </nav>
 
 <!-- Hero -->
 <section id="hero">
   <div class="hero-content">
-    <div class="hero-badge">Full Stack Engineer</div>
-    <h1>
-      Hi, I'm <span class="gradient-text">Your Name</span><br>
-      Building The Future
-    </h1>
-    <p class="hero-subtitle">
-      <span class="highlight">Java</span> &bull;
-      <span class="highlight">React</span> &bull;
-      <span class="highlight">LLM Apps</span>
-      <br>
-      Full-stack engineer crafting scalable systems & intelligent experiences
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">
-        <i class="fas fa-rocket"></i> View My Work
-      </a>
-      <a href="#contact" class="btn btn-outline">
-        <i class="fas fa-envelope"></i> Get in Touch
-      </a>
-    </div>
+    <div class="hero-badge" id="hero-badge"></div>
+    <h1 id="hero-heading"></h1>
+    <p class="hero-subtitle" id="hero-subtitle"></p>
+    <div class="hero-cta" id="hero-cta"></div>
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -870,41 +1123,19 @@ footer {
 <!-- About -->
 <section id="about">
   <div class="container">
-    <h2 class="section-title reveal">About <span>Me</span></h2>
+    <h2 class="section-title reveal" id="about-title"></h2>
     <div class="about-grid">
       <div class="about-image reveal">
         <div class="avatar-frame">
-          <div class="avatar-placeholder">
+          <div class="avatar-placeholder" id="about-avatar">
             <i class="fas fa-user-astronaut"></i>
           </div>
         </div>
       </div>
       <div class="about-text reveal">
-        <h3>Full Stack Developer & AI Enthusiast</h3>
-        <p>
-          I build end-to-end applications from the ground up — from robust
-          <strong>Java Spring Boot</strong> backends to dynamic
-          <strong>React</strong> frontends and intelligent
-          <strong>LLM-powered</strong> solutions.
-        </p>
-        <p>
-          With a passion for clean architecture and user-centric design,
-          I create applications that are both powerful and delightful to use.
-        </p>
-        <div class="about-stats">
-          <div class="stat-item">
-            <div class="stat-number">3+</div>
-            <div class="stat-label">Years Exp</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">10+</div>
-            <div class="stat-label">Clients</div>
-          </div>
-        </div>
+        <h3 id="about-heading"></h3>
+        <div id="about-paragraphs"></div>
+        <div class="about-stats" id="about-stats"></div>
       </div>
     </div>
   </div>
@@ -913,186 +1144,69 @@ footer {
 <!-- Skills -->
 <section id="skills">
   <div class="container">
-    <h2 class="section-title reveal">Tech <span>Stack</span></h2>
-    <div class="skills-grid">
-      <div class="skill-category reveal">
-        <h3><i class="fab fa-java"></i> Backend</h3>
-        <div class="skill-items">
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">Spring Boot</span>
-          <span class="skill-tag">Microservices</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">JPA / Hibernate</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">MySQL</span>
-        </div>
-      </div>
-      <div class="skill-category reveal">
-        <h3><i class="fab fa-react"></i> Frontend</h3>
-        <div class="skill-items">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">Redux</span>
-          <span class="skill-tag">HTML5 / CSS3</span>
-          <span class="skill-tag">JavaScript</span>
-        </div>
-      </div>
-      <div class="skill-category reveal">
-        <h3><i class="fas fa-brain"></i> LLM & AI</h3>
-        <div class="skill-items">
-          <span class="skill-tag">LangChain</span>
-          <span class="skill-tag">OpenAI API</span>
-          <span class="skill-tag">LlamaIndex</span>
-          <span class="skill-tag">RAG Pipelines</span>
-          <span class="skill-tag">Vector DBs</span>
-          <span class="skill-tag">Hugging Face</span>
-          <span class="skill-tag">Prompt Engineering</span>
-          <span class="skill-tag">Fine-tuning</span>
-        </div>
-      </div>
-    </div>
+    <h2 class="section-title reveal" id="skills-title"></h2>
+    <div class="skills-grid" id="skills-grid"></div>
   </div>
 </section>
 
 <!-- Projects -->
 <section id="projects">
   <div class="container">
-    <h2 class="section-title reveal">Featured <span>Projects</span></h2>
-    <div class="projects-grid">
-      <div class="project-card reveal">
-        <div class="project-image java">
-          <i class="fas fa-server project-icon"></i>
-        </div>
-        <div class="project-card-body">
-          <div class="project-tags">
-            <span>Java</span>
-            <span>Spring Boot</span>
-            <span>PostgreSQL</span>
-          </div>
-          <h3>E-Commerce Platform</h3>
-          <p>Scalable microservices architecture with JWT auth, payment gateway, and real-time inventory management.</p>
-          <div class="project-links">
-            <a href="#"><i class="fab fa-github"></i> Source</a>
-            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal">
-        <div class="project-image react">
-          <i class="fab fa-react project-icon"></i>
-        </div>
-        <div class="project-card-body">
-          <div class="project-tags">
-            <span>React</span>
-            <span>TypeScript</span>
-            <span>Node.js</span>
-          </div>
-          <h3>Dashboard Analytics</h3>
-          <p>Real-time data visualization dashboard with interactive charts, dark mode, and responsive design.</p>
-          <div class="project-links">
-            <a href="#"><i class="fab fa-github"></i> Source</a>
-            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal">
-        <div class="project-image llm">
-          <i class="fas fa-robot project-icon"></i>
-        </div>
-        <div class="project-card-body">
-          <div class="project-tags">
-            <span>LangChain</span>
-            <span>OpenAI</span>
-            <span>Python</span>
-          </div>
-          <h3>AI Knowledge Assistant</h3>
-          <p>RAG-based chatbot that answers queries from your documents using vector search and LLM reasoning.</p>
-          <div class="project-links">
-            <a href="#"><i class="fab fa-github"></i> Source</a>
-            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h2 class="section-title reveal" id="projects-title"></h2>
+    <div class="projects-grid" id="projects-grid"></div>
   </div>
 </section>
 
 <!-- Experience -->
 <section id="experience">
   <div class="container">
-    <h2 class="section-title reveal">Work <span>Experience</span></h2>
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2024 — Present</div>
-        <h3>TechCorp Inc.</h3>
-        <div class="role">Senior Full Stack Engineer</div>
-        <p>Architected and deployed microservices handling 1M+ daily requests. Led migration from monolith to cloud-native stack.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2022 — 2024</div>
-        <h3>StartupXYZ</h3>
-        <div class="role">Full Stack Developer</div>
-        <p>Built React-based SaaS platform from scratch. Integrated LLM features for intelligent document processing.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2021 — 2022</div>
-        <h3>WebAgency</h3>
-        <div class="role">Junior Developer</div>
-        <p>Developed custom web applications for clients using Java, Spring Boot, and React. Delivered 10+ projects on time.</p>
-      </div>
+    <h2 class="section-title reveal" id="experience-title"></h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ADHD SUPERPOWERS — Standalone Marketing Section
+     ══════════════════════════════════════════════════════ -->
+<section id="adhd">
+  <div class="adhd-divider-top"></div>
+  <div class="container">
+    <div class="adhd-badge reveal" id="adhd-badge"></div>
+    <div class="adhd-title-block reveal">
+      <h2 id="adhd-title"></h2>
+      <div class="sub" id="adhd-subtitle"></div>
     </div>
+    <div class="adhd-intro reveal" id="adhd-intro"></div>
+    <div class="adhd-grid reveal" id="adhd-grid"></div>
+    <div class="adhd-cta reveal" id="adhd-cta"></div>
   </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
   <div class="container">
-    <h2 class="section-title reveal">Get in <span>Touch</span></h2>
+    <h2 class="section-title reveal" id="contact-title"></h2>
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <h3>Let's build something amazing</h3>
-        <p>Have a project in mind? Reach out and let's make it happen.</p>
-        <div class="contact-details">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>hello@yourname.dev</span>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>San Francisco, CA</span>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone-alt"></i>
-            <span>+1 (555) 123-4567</span>
-          </div>
-        </div>
-        <div class="social-links">
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Dev.to"><i class="fab fa-dev"></i></a>
-        </div>
+        <h3 id="contact-heading"></h3>
+        <p id="contact-subtext"></p>
+        <div class="contact-details" id="contact-details"></div>
+        <div class="social-links" id="social-links"></div>
       </div>
-      <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Thanks for reaching out! I\'ll get back to you soon.');">
+      <form class="contact-form reveal" id="contact-form">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="John Doe" required>
+          <input type="text" id="name" required>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="john@example.com" required>
+          <input type="email" id="email" required>
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+          <textarea id="message" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="align-self:flex-start">
+        <button type="submit" class="btn btn-primary" id="contact-submit" style="align-self:flex-start">
           <i class="fas fa-paper-plane"></i> Send Message
         </button>
       </form>
@@ -1100,12 +1214,162 @@ footer {
   </div>
 </section>
 
-<footer>
-  <p>&copy; 2026 Your Name. Crafted with <span style="color:#f5576c;">&hearts;</span></p>
-</footer>
+<footer id="footer"></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="config.js"></script>
 <script>
+/* ── Populate from SITE_DATA ── */
+
+// Helper to set HTML
+function $(sel, html) { const el = document.querySelector(sel); if (el) el.innerHTML = html; return el; }
+function $a(sel, fn) { document.querySelectorAll(sel).forEach(fn); }
+
+const D = SITE_DATA;
+
+document.title = D.site.title;
+$('#logo-text', D.site.logo);
+$('#footer', D.site.footer);
+
+// ── Nav ──
+const navList = document.getElementById('navLinks');
+D.nav.links.forEach(link => {
+  const li = document.createElement('li');
+  li.innerHTML = `<a href="${link.href}">${link.label}</a>`;
+  navList.appendChild(li);
+});
+
+// ── Hero ──
+$('#hero-badge', D.hero.badge);
+$('#hero-heading',
+  `Hi, I'm <span class="gradient-text">${D.hero.name}</span><br>${D.hero.tagline}`
+);
+const highlights = D.hero.highlights.map(h => `<span class="highlight">${h}</span>`).join(' &bull; ');
+$('#hero-subtitle', `${highlights}<br>${D.hero.subtitle}`);
+$('#hero-cta',
+  `<a href="${D.hero.primaryBtn.href}" class="btn btn-primary"><i class="fas fa-rocket"></i> ${D.hero.primaryBtn.text}</a>` +
+  `<a href="${D.hero.secondaryBtn.href}" class="btn btn-outline"><i class="fas fa-envelope"></i> ${D.hero.secondaryBtn.text}</a>`
+);
+
+// ── About ──
+$('#about-title', `About <span>${D.about.title.split(' ').slice(1).join(' ') || D.about.title}</span>`);
+$('#about-avatar', `<i class="fas ${D.about.avatarIcon}"></i>`);
+$('#about-heading', D.about.heading);
+$('#about-paragraphs', D.about.paragraphs.map(p => `<p>${p}</p>`).join(''));
+$('#about-stats', D.about.stats.map(s =>
+  `<div class="stat-item"><div class="stat-number">${s.number}</div><div class="stat-label">${s.label}</div></div>`
+).join(''));
+
+// ── Skills ──
+$('#skills-title', `Tech <span>Stack</span>`);
+$('#skills-grid', D.skills.categories.map(cat =>
+  `<div class="skill-category reveal">
+    <h3><i class="${cat.icon}"></i> ${cat.name}</h3>
+    <div class="skill-items">${cat.tags.map(t => `<span class="skill-tag">${t}</span>`).join('')}</div>
+  </div>`
+).join(''));
+
+// ── Projects ──
+$('#projects-title', `Featured <span>Projects</span>`);
+$('#projects-grid', D.projects.items.map(p =>
+  `<div class="project-card reveal">
+    <div class="project-image ${p.imageClass}"><i class="${p.icon} project-icon"></i></div>
+    <div class="project-card-body">
+      <div class="project-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+      <div class="project-links">${p.links.map(l => `<a href="${l.href}"><i class="${l.icon}"></i> ${l.text}</a>`).join('')}</div>
+    </div>
+  </div>`
+).join(''));
+
+// ── Experience ──
+$('#experience-title', `Work <span>Experience</span>`);
+$('#timeline', D.experience.items.map((item, i) => {
+  const dotColors = ['#f5576c', '#4facfe', '#43e97b'];
+  return `<div class="timeline-item reveal">
+    <div class="timeline-dot" style="border-color:${dotColors[i] || dotColors[0]}"></div>
+    <div class="timeline-date">${item.date}</div>
+    <h3>${item.company}</h3>
+    <div class="role">${item.role}</div>
+    <p>${item.desc}</p>
+  </div>`;
+}).join(''));
+
+/* ── ADHD SUPERPOWERS SECTION ── */
+if (D.adhd.enabled) {
+  const A = D.adhd;
+
+  $('#adhd-badge', A.badge);
+  $('#adhd-title', `${A.title} <span class="gold">${A.subtitle}</span>`);
+  $('#adhd-subtitle', A.subtitle);
+  $('#adhd-intro', A.intro.map(p => `<p>${p}</p>`).join(''));
+
+  $('#adhd-grid', A.superpowers.map(sp =>
+    `<div class="adhd-card">
+      <div class="adhd-card-header">
+        <div class="adhd-card-icon"><i class="fas ${sp.icon}"></i></div>
+        <div class="adhd-card-titles">
+          <h3>${sp.title}</h3>
+          <div class="tagline">${sp.tagline}</div>
+        </div>
+      </div>
+      <p>${sp.description}</p>
+      <div class="intensity-row">
+        <span class="intensity-label">INT</span>
+        <div class="intensity-bar"><div class="intensity-fill" data-width="${sp.intensity}"></div></div>
+      </div>
+    </div>`
+  ).join(''));
+
+  $('#adhd-cta',
+    `<h3>${A.cta.headline}</h3>
+     <p>${A.cta.subtext}</p>
+     <a href="${A.cta.buttonHref}" class="btn btn-gold"><i class="fas fa-bolt"></i> ${A.cta.buttonText}</a>`
+  );
+
+  // Animate intensity bars when section scrolls into view
+  const adhdObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.intensity-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const adhdSection = document.getElementById('adhd');
+  if (adhdSection) adhdObserver.observe(adhdSection);
+} else {
+  const adhdEl = document.getElementById('adhd');
+  if (adhdEl) adhdEl.style.display = 'none';
+}
+
+// ── Contact ──
+$('#contact-title', `Get in <span>Touch</span>`);
+$('#contact-heading', D.contact.heading);
+$('#contact-subtext', D.contact.subtext);
+$('#contact-details', D.contact.details.map(d =>
+  `<div class="contact-item"><i class="${d.icon}"></i><span>${d.text}</span></div>`
+).join(''));
+$('#social-links', D.contact.social.map(s =>
+  `<a href="${s.href}" aria-label="${s.label}"><i class="${s.icon}"></i></a>`
+).join(''));
+
+// Contact form
+const form = document.getElementById('contact-form');
+form.querySelector('#name').placeholder = D.contact.formPlaceholders.name;
+form.querySelector('#email').placeholder = D.contact.formPlaceholders.email;
+form.querySelector('#message').placeholder = D.contact.formPlaceholders.message;
+const submitBtn = document.getElementById('contact-submit');
+submitBtn.innerHTML = `<i class="${D.contact.formSubmitIcon}"></i> ${D.contact.formSubmitText}`;
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert(D.contact.successAlert);
+});
+
+/* ── Three.js 3D Scene ── */
 (function() {
   const canvas = document.getElementById('three-canvas');
   const scene = new THREE.Scene();
@@ -1121,7 +1385,7 @@ footer {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // ── 1. Star field (3D particles) ──
+  // ── 1. Star field ──
   const starsGeo = new THREE.BufferGeometry();
   const starCount = 2500;
   const starPos = new Float32Array(starCount * 3);
@@ -1165,16 +1429,14 @@ footer {
       (Math.random() - 0.5) * 30 - 5
     );
     mesh.userData = {
-      speedX: (Math.random() - 0.5) * 0.01,
       speedY: Math.random() * 0.015 + 0.005,
-      speedZ: (Math.random() - 0.5) * 0.01,
       phase: Math.random() * Math.PI * 2,
     };
     scene.add(mesh);
     bubbles.push(mesh);
   }
 
-  // ── 3. Wireframe icosahedron (central 3D object) ──
+  // ── 3. Wireframe icosahedron ──
   const icoGeo = new THREE.IcosahedronGeometry(3.5, 1);
   const icoMat = new THREE.MeshPhysicalMaterial({
     color: 0x6c5ce7,
@@ -1188,7 +1450,6 @@ footer {
   ico.position.y = -1;
   scene.add(ico);
 
-  // inner solid glow
   const glowGeo = new THREE.IcosahedronGeometry(2.2, 0);
   const glowMat = new THREE.MeshBasicMaterial({
     color: 0x6c5ce7,
@@ -1211,7 +1472,7 @@ footer {
   ring.position.y = -1;
   scene.add(ring);
 
-  // ── 5. Small orbiting dots ──
+  // ── 5. Orbiting dots ──
   const orbitDots = [];
   for (let i = 0; i < 60; i++) {
     const dotGeo = new THREE.SphereGeometry(0.08, 6, 6);
@@ -1243,60 +1504,48 @@ footer {
     mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
   });
 
-  // ── Resize ──
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
 
-  // ── Animation ──
   const clock = new THREE.Clock();
 
   function animate() {
     const t = clock.getElapsedTime();
 
-    // Stars slowly rotate
     stars.rotation.y = t * 0.005;
     stars.rotation.x = t * 0.003;
 
-    // Bubbles float upward
     bubbles.forEach(b => {
       b.position.y += b.userData.speedY;
       b.position.x += Math.sin(t * 0.5 + b.userData.phase) * 0.003;
       b.position.z += Math.sin(t * 0.3 + b.userData.phase) * 0.003;
-
-      // Reset to bottom when reaching top
       if (b.position.y > 25) {
         b.position.y = -25;
         b.position.x = (Math.random() - 0.5) * 50;
         b.position.z = (Math.random() - 0.5) * 30 - 5;
       }
-
-      // gentle scale pulse
       const pulse = 1 + Math.sin(t * 0.8 + b.userData.phase) * 0.05;
       b.scale.setScalar(pulse);
     });
 
-    // Icosahedron rotation
     ico.rotation.x = t * 0.2;
     ico.rotation.y = t * 0.35;
     glow.rotation.x = t * 0.2;
     glow.rotation.y = t * 0.35;
     glow.scale.setScalar(1 + Math.sin(t * 0.6) * 0.05);
 
-    // Ring
     ring.rotation.x = Math.PI / 2 + Math.sin(t * 0.15) * 0.2;
     ring.rotation.z = t * 0.1;
 
-    // Orbiting dots
     orbitDots.forEach(d => {
       d.userData.angle += d.userData.speed;
       d.position.x = Math.cos(d.userData.angle) * d.userData.radius;
       d.position.z = Math.sin(d.userData.angle) * d.userData.radius;
     });
 
-    // Mouse parallax on central group
     const targetX = mouseX * 3;
     const targetY = -mouseY * 2;
     ico.position.x += (targetX - ico.position.x) * 0.02;
