@@ -17,28 +17,27 @@ const SITE_DATA = {
   /* ── Navigation ── */
   nav: {
     links: [
-      { href: "#hero",       label: "Home" },
-      { href: "#about",      label: "About" },
-      { href: "#skills",     label: "Skills" },
-      { href: "#projects",   label: "Projects" },
-      { href: "#experience", label: "Experience" },
-      { href: "#adhd",       label: "Superpowers" },
-      { href: "#contact",    label: "Contact" },
+      { href: "#slide-0", label: "Home" },
+      { href: "#slide-1", label: "Work" },
+      { href: "#slide-2", label: "Contact" },
+      { href: "#slide-3", label: "Superpowers" },
     ],
   },
 
-  /* ── Hero ── */
+  /* ── Hero (left half of slide 0) ── */
   hero: {
     badge: "Full Stack Engineer",
     name: "Your Name",
     tagline: "Building The Future",
     highlights: ["Java", "React", "LLM Apps"],
     subtitle: "Full-stack engineer crafting scalable systems & intelligent experiences",
-    primaryBtn:  { text: "View My Work", href: "#projects" },
-    secondaryBtn:{ text: "Get in Touch", href: "#contact" },
+    cta: [
+      { text: "View My Work", href: "#", slide: 1, icon: "fas fa-arrow-right" },
+      { text: "Get in Touch", href: "#", slide: 2, icon: "fas fa-envelope" },
+    ],
   },
 
-  /* ── About ── */
+  /* ── About (right half of slide 0) ── */
   about: {
     title: "About Me",
     heading: "Full Stack Developer & AI Enthusiast",
@@ -54,7 +53,7 @@ const SITE_DATA = {
     ],
   },
 
-  /* ── Skills ── */
+  /* ── Skills (left half of slide 1) ── */
   skills: {
     title: "Tech Stack",
     categories: [
@@ -76,19 +75,18 @@ const SITE_DATA = {
     ],
   },
 
-  /* ── Projects ── */
+  /* ── Projects (right half of slide 1) ── */
   projects: {
-    title: "Featured Projects",
+    title: "Projects",
     items: [
       {
         imageClass: "java",
         icon: "fas fa-server",
         tags: ["Java","Spring Boot","PostgreSQL"],
         title: "E-Commerce Platform",
-        desc: "Scalable microservices architecture with JWT auth, payment gateway, and real-time inventory management.",
+        desc: "Scalable microservices with JWT auth, payment gateway, real-time inventory.",
         links: [
-          { icon: "fab fa-github",          text: "Source",    href: "#" },
-          { icon: "fas fa-external-link-alt", text: "Live Demo", href: "#" },
+          { icon: "fab fa-github", text: "Code", href: "#" },
         ],
       },
       {
@@ -96,10 +94,9 @@ const SITE_DATA = {
         icon: "fab fa-react",
         tags: ["React","TypeScript","Node.js"],
         title: "Dashboard Analytics",
-        desc: "Real-time data visualization dashboard with interactive charts, dark mode, and responsive design.",
+        desc: "Real-time data viz dashboard with interactive charts and dark mode.",
         links: [
-          { icon: "fab fa-github",          text: "Source",    href: "#" },
-          { icon: "fas fa-external-link-alt", text: "Live Demo", href: "#" },
+          { icon: "fab fa-github", text: "Code", href: "#" },
         ],
       },
       {
@@ -107,52 +104,62 @@ const SITE_DATA = {
         icon: "fas fa-robot",
         tags: ["LangChain","OpenAI","Python"],
         title: "AI Knowledge Assistant",
-        desc: "RAG-based chatbot that answers queries from your documents using vector search and LLM reasoning.",
+        desc: "RAG-based chatbot using vector search and LLM reasoning on documents.",
         links: [
-          { icon: "fab fa-github",          text: "Source",    href: "#" },
-          { icon: "fas fa-external-link-alt", text: "Live Demo", href: "#" },
+          { icon: "fab fa-github", text: "Code", href: "#" },
         ],
       },
     ],
   },
 
-  /* ── Experience ── */
+  /* ── Experience (left half of slide 2) ── */
   experience: {
-    title: "Work Experience",
+    title: "Experience",
     items: [
       {
         date: "2024 — Present",
         company: "TechCorp Inc.",
         role: "Senior Full Stack Engineer",
-        desc: "Architected and deployed microservices handling 1M+ daily requests. Led migration from monolith to cloud-native stack.",
+        desc: "Architected microservices handling 1M+ daily requests. Led monolith-to-cloud migration.",
         dotColor: "#f5576c",
       },
       {
         date: "2022 — 2024",
         company: "StartupXYZ",
         role: "Full Stack Developer",
-        desc: "Built React-based SaaS platform from scratch. Integrated LLM features for intelligent document processing.",
+        desc: "Built React SaaS platform from scratch. Integrated LLM features for document processing.",
         dotColor: "#4facfe",
       },
       {
         date: "2021 — 2022",
         company: "WebAgency",
         role: "Junior Developer",
-        desc: "Developed custom web applications for clients using Java, Spring Boot, and React. Delivered 10+ projects on time.",
+        desc: "Delivered 10+ web apps using Java, Spring Boot, and React.",
         dotColor: "#43e97b",
       },
     ],
   },
 
-  /* =============================================================
-     ADHD SUPERPOWERS SECTION  (marketing-focused)
-     Toggle enabled/disabled, edit every word below.
-     ============================================================= */
-  adhd: {
-    enabled: true,               // set false to hide the entire section
+  /* ── Contact (right half of slide 2) ── */
+  contact: {
+    title: "Contact",
+    heading: "Let's build something amazing",
+    subtext: "No backend — just copy my email and send me a message directly.",
+    email: "hello@yourname.dev",
+    emailLabel: "Click to copy email",
+    copiedText: "Copied! Ready to paste in your email app.",
+    social: [
+      { icon: "fab fa-github",     href: "#", label: "GitHub" },
+      { icon: "fab fa-linkedin-in", href: "#", label: "LinkedIn" },
+      { icon: "fab fa-twitter",    href: "#", label: "Twitter" },
+    ],
+  },
 
-    sectionId: "adhd",
-    navLabel: "Superpowers",
+  /* ════════════════════════════════════════════════════════════
+     ADHD SUPERPOWERS (standalone slide 3)
+     ════════════════════════════════════════════════════════════ */
+  adhd: {
+    enabled: true,
 
     badge: "Neurodivergent by Design",
     title: "Built Different",
@@ -160,11 +167,9 @@ const SITE_DATA = {
 
     intro: [
       "The same wiring that makes focus a challenge is the exact wiring that makes me exceptional at what I do. <strong>I don't work despite my brain — I work because of it.</strong>",
-      'Here is how my brain operates — and why it is an unfair advantage for the teams I join.',
+      "Here is how my brain operates — and why it is an unfair advantage for the teams I join.",
     ],
 
-    /* Each superpower: icon (FontAwesome), title, short tagline,
-       description (marketing copy), intensity (0-100 for the gauge) */
     superpowers: [
       {
         icon: "fa-bolt",
@@ -179,7 +184,7 @@ const SITE_DATA = {
         title: "Radar Pattern Recognition",
         tagline: "See what others miss",
         description:
-          "My brain constantly scans for connections — between systems, across codebases, through conversation. I spot architecture flaws before they surface, debug by intuition, and connect dots that aren't visible on any diagram. It's not magic; it's how my attention is wired.",
+          "My brain constantly scans for connections — across codebases, through conversations. I spot architecture flaws before they surface, debug by intuition, and connect dots that aren't visible on any diagram. It's not magic; it's how my attention is wired.",
         intensity: 92,
       },
       {
@@ -232,39 +237,13 @@ const SITE_DATA = {
       },
     ],
 
-    // Call-to-action block at the bottom of the section
     cta: {
       headline: "This is what intensity looks like in production.",
       subtext: "If you need someone who thinks different, ships fast, and cares deeply — let's talk.",
       buttonText: "Let's Put This Brain to Work",
-      buttonHref: "#contact",
+      buttonHref: "#",
+      buttonSlide: 2,
     },
-  },
-
-  /* ── Contact ── */
-  contact: {
-    title: "Get in Touch",
-    heading: "Let's build something amazing",
-    subtext: "Have a project in mind? Reach out and let's make it happen.",
-    details: [
-      { icon: "fas fa-envelope",       text: "hello@yourname.dev" },
-      { icon: "fas fa-map-marker-alt", text: "San Francisco, CA" },
-      { icon: "fas fa-phone-alt",      text: "+1 (555) 123-4567" },
-    ],
-    social: [
-      { icon: "fab fa-github",     href: "#", label: "GitHub" },
-      { icon: "fab fa-linkedin-in", href: "#", label: "LinkedIn" },
-      { icon: "fab fa-twitter",    href: "#", label: "Twitter" },
-      { icon: "fab fa-dev",        href: "#", label: "Dev.to" },
-    ],
-    formPlaceholders: {
-      name: "John Doe",
-      email: "john@example.com",
-      message: "Tell me about your project...",
-    },
-    formSubmitText: "Send Message",
-    formSubmitIcon: "fas fa-paper-plane",
-    successAlert: "Thanks for reaching out! I'll get back to you soon.",
   },
 
 };
