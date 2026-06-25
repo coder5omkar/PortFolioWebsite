@@ -80,7 +80,7 @@ body.downloading{pointer-events:none;opacity:0.6}
     <a href="#" data-section="projects"><i class="fas fa-folder"></i> Projects</a>
     <a href="#" data-section="experience"><i class="fas fa-briefcase"></i> Experience</a>
     <a href="#" data-section="contact"><i class="fas fa-envelope"></i> Contact</a>
-    <a href="#" data-section="adhd"><i class="fas fa-brain"></i> ADHD</a>
+      <a href="#" data-section="adhd"><i class="fas fa-brain"></i> Superpowers</a>
   </nav>
 </div>
 
@@ -297,7 +297,7 @@ body.downloading{pointer-events:none;opacity:0.6}
 
   <!-- ═══ ADHD ═══ -->
   <div class="editor-section" id="section-adhd">
-    <h2>ADHD Superpowers</h2>
+    <h2>Superpowers</h2>
     <div class="field-group">
       <label>Enable ADHD Slide</label>
       <select id="f-adhd-enabled"><option value="true">Enabled</option><option value="false">Disabled</option></select>
@@ -309,16 +309,16 @@ body.downloading{pointer-events:none;opacity:0.6}
       </div>
       <div class="field-group">
         <label>Title</label>
-        <input id="f-adhd-title" value="Built Different">
+        <input id="f-adhd-title" value="built different">
       </div>
     </div>
     <div class="field-group">
       <label>Subtitle</label>
-      <input id="f-adhd-subtitle" value="High-Functioning ADHD in Engineering">
+      <input id="f-adhd-subtitle" value="">
     </div>
     <div class="field-group">
       <label>Intro Paragraph 1</label>
-      <textarea id="f-adhd-intro1" rows="2">The same wiring that makes focus a challenge is the exact wiring that makes me exceptional at what I do. &lt;strong&gt;I don't work despite my brain — I work because of it.&lt;/strong&gt;</textarea>
+      <textarea id="f-adhd-intro1" rows="2"></textarea>
     </div>
     <div class="field-group">
       <label>Intro Paragraph 2</label>
@@ -518,9 +518,9 @@ function resetDefaults() {
   document.getElementById('f-social-gh').value = '#'; document.getElementById('f-social-li').value = '#'; document.getElementById('f-social-docker').value = '#';
   document.getElementById('f-adhd-enabled').value = 'true';
   document.getElementById('f-adhd-badge').value = 'Neurodivergent by Design';
-  document.getElementById('f-adhd-title').value = 'Built Different';
-  document.getElementById('f-adhd-subtitle').value = 'High-Functioning ADHD in Engineering';
-  document.getElementById('f-adhd-intro1').value = 'The same wiring that makes focus a challenge is the exact wiring that makes me exceptional at what I do. &lt;strong&gt;I don\'t work despite my brain \u2014 I work because of it.&lt;/strong&gt;';
+  document.getElementById('f-adhd-title').value = 'built different';
+  document.getElementById('f-adhd-subtitle').value = '';
+  document.getElementById('f-adhd-intro1').value = '';
   document.getElementById('f-adhd-intro2').value = 'Here is how my brain operates \u2014 and why it is an unfair advantage for the teams I join.';
   document.getElementById('f-adhd-cta-h').value = 'This is what intensity looks like in production.';
   document.getElementById('f-adhd-cta-s').value = 'If you need someone who thinks different, ships fast, and cares deeply \u2014 let\'s talk.';
@@ -872,9 +872,10 @@ footer { text-align:center; padding:0.8rem; font-size:0.75rem; color:rgba(255,25
   if (adhdEnabled) {
     out += '<section class="slide" data-index="3" id="adhd">\n<div class="adhd-inner">\n';
     out += '  <div class="adhd-badge sr">' + esc(val('f-adhd-badge')) + '</div>\n';
-    out += '  <h2 class="adhd-title sr">' + esc(val('f-adhd-title')) + ' <span class="gold">' + esc(val('f-adhd-subtitle')) + '</span></h2>\n';
-    out += '  <div class="adhd-sub sr">' + esc(val('f-adhd-subtitle')) + '</div>\n';
-    out += '  <div class="adhd-intro sr"><p>' + val('f-adhd-intro1') + '</p><p>' + val('f-adhd-intro2') + '</p></div>\n';
+    var adhdSub = val('f-adhd-subtitle'), adhdIntro1 = val('f-adhd-intro1');
+    out += '  <h2 class="adhd-title sr">' + esc(val('f-adhd-title')) + (adhdSub ? ' <span class="gold">' + esc(adhdSub) + '</span>' : '') + '</h2>\n';
+    if (adhdSub) { out += '  <div class="adhd-sub sr">' + esc(adhdSub) + '</div>\n'; }
+    out += '  <div class="adhd-intro sr">' + (adhdIntro1 ? '<p>' + adhdIntro1 + '</p>' : '') + '<p>' + val('f-adhd-intro2') + '</p></div>\n';
     out += '  <div class="adhd-grid sr">\n';
     superpowers.forEach(sp => {
       out += '    <div class="adhd-card"><div class="adhd-hdr"><div class="adhd-icon"><i class="fas ' + esc(sp.icon) + '"></i></div><div class="adhd-titles"><h4>' + esc(sp.title) + '</h4><div class="tag">' + esc(sp.tagline) + '</div></div></div><p>' + esc(sp.description) + '</p><div class="int-row"><span class="int-lbl">INT</span><div class="int-bar"><div class="int-fill" data-w="' + sp.intensity + '"></div></div></div></div>\n';
