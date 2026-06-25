@@ -32,7 +32,7 @@ A self-contained portfolio generator for Forward Deployed Engineers. Fill in you
 - **Slide 2** — Experience (timeline) + Contact (click-to-copy email, social links)
 - **Slide 3** — ADHD Superpowers (8 expandable cards with intensity bars + golden CTA)
 
-### ADHD Superpowers Section
+### Superpowers Section
 - 8 cards in a 2×4 grid, each with icon, title, tagline, description, and intensity meter
 - **Click any card** to open a pop-out modal with full-size readable text
 - Can be disabled entirely from the editor
