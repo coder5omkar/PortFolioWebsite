@@ -1,8 +1,56 @@
 # Portfolio Website — Visual Editor + 3D Slide Deck
 
-A self-contained portfolio generator for Forward Deployed Engineers. Fill in your data in the **Editor**, hit **Generate HTML**, and get a production-ready single-file portfolio with a 3D Three.js background, full-screen slide deck, and an ADHD Superpowers section.
+<p align="center">
+  <img src="https://img.shields.io/badge/status-production-ready-brightgreen" alt="Status">
+  <img src="https://img.shields.io/badge/Three.js-r128-blueviolet" alt="Three.js">
+  <img src="https://img.shields.io/badge/Font_Awesome-6.5.1-528DD7" alt="Font Awesome">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
+  <img src="https://img.shields.io/badge/PRs-welcome-orange" alt="PRs Welcome">
+</p>
 
-## Files
+A self-contained portfolio generator built for **Forward Deployed Engineers**. Fill in your data in the visual editor, hit **Generate HTML**, and get a production-ready single-file portfolio featuring a 3D Three.js background, full-screen slide deck, and an ADHD Superpowers section.
+
+---
+
+## ✨ Features at a Glance
+
+### 🎬 Slide Deck
+- **4 full-screen slides** with keyboard navigation (`↑ ↓ ← →`, `Home`, `End`), mouse wheel, and touch swipe support
+- Slide counter & progress dots
+- Split-panel layout on slides 0–2 for side-by-side content
+
+### 📋 Sections
+| Slide | Content |
+|-------|---------|
+| **0** | Hero (name, tagline, highlights, CTA) + About (photo, bio, stats) |
+| **1** | Skills (editable categories with tags) + Projects (cards with GitHub links) |
+| **2** | Experience (timeline) + Contact (click-to-copy email, social links) |
+| **3** | ADHD Superpowers (8 expandable cards with intensity bars + golden CTA) |
+
+### ⚡ Superpowers Section
+- 8 cards in a 2×4 grid — each with icon, title, tagline, description, and intensity meter
+- **Click any card** to open a pop-out modal with full-size readable text
+- Can be disabled entirely from the editor
+
+### 🎨 Visual Design
+- Dark theme with **pink → purple → blue** gradient accents
+- Gold gradient "Superpowers" badge centered in the nav bar
+- Animated 3D background: stars, floating orbs, rotating icosahedron, orbiting particles
+- Slide-reveal animations on content
+- Responsive layout with hamburger menu & stacked mobile views
+
+### 🛠️ Editor Features
+- Sidebar navigation across **8 sections**
+- Dynamic **add / remove** for skill categories, projects, experience items, and superpower cards
+- Photo upload with live circular preview
+- GitHub URL field per project (auto-prefixes `https://` if missing)
+- Social links: GitHub, LinkedIn, Docker
+- Reset to defaults button
+- Generates a fully self-contained `.html` file with all data inlined
+
+---
+
+## 🚀 Getting Started
 
 | File | Purpose |
 |------|---------|
@@ -10,59 +58,44 @@ A self-contained portfolio generator for Forward Deployed Engineers. Fill in you
 | `index.html` | Pre-built example portfolio (same output as the editor generates) |
 | `config.js` | External data file used by `index.html` (not needed for `editor.html`) |
 
-## How to Use
+**Quick start:**
 
-1. Open **`editor.html`** in any modern browser
-2. Fill in your data across all sections (Site, Hero, About, Skills, Projects, Experience, Contact, ADHD)
-3. Upload a profile photo (optional) — replaces the avatar icon
-4. Add GitHub repo URLs to each project
-5. Click **"Generate HTML"** — downloads a standalone `portfolio.html`
-6. Open `portfolio.html` in a browser or deploy to any static host
+```bash
+# 1. Open the editor in your browser
+open editor.html
 
-## Features
+# 2. Fill in your data across all sections
+# 3. Upload a profile photo (optional)
+# 4. Add GitHub repo URLs to each project
+# 5. Click "Generate HTML" → downloads standalone portfolio.html
+# 6. Open portfolio.html or deploy to any static host
+```
 
-### Slide Deck
-- 4 full-screen slides with keyboard (↑↓←→ / Home / End), mouse wheel, and touch swipe navigation
-- Slide counter + progress dots
-- Split-panel layout on slides 0–2 (side-by-side content)
+---
 
-### Sections
-- **Slide 0** — Hero (name, tagline, highlights, CTA buttons) + About (photo, bio, stats)
-- **Slide 1** — Skills (editable categories with tags) + Projects (cards with GitHub links)
-- **Slide 2** — Experience (timeline) + Contact (click-to-copy email, social links)
-- **Slide 3** — ADHD Superpowers (8 expandable cards with intensity bars + golden CTA)
+## 🧱 Tech Stack
 
-### Superpowers Section
-- 8 cards in a 2×4 grid, each with icon, title, tagline, description, and intensity meter
-- **Click any card** to open a pop-out modal with full-size readable text
-- Can be disabled entirely from the editor
+| Technology | Usage |
+|------------|-------|
+| **Three.js** (r128) | 3D background scene |
+| **Font Awesome** 6.5.1 | Icons |
+| **Vanilla HTML / CSS / JS** | Core application — no frameworks, no build step, no dependencies |
 
-### Visual Design
-- Dark theme with gradient accents (pink → purple → blue)
-- Gold gradient "Superpowers" badge in the center of the nav bar
-- Animated 3D background (stars, floating orbs, rotating icosahedron, orbiting particles)
-- Slide-reveal animations on content
-- Responsive for mobile (hamburger menu, stacked layout)
+---
 
-### Editor Features
-- Sidebar navigation across 8 sections
-- Dynamic add/remove for skill categories, projects, experience items, superpower cards
-- Photo upload with live circular preview
-- GitHub URL field per project (auto-prefixes `https://` if missing)
-- Social links: GitHub, LinkedIn, Docker
-- Reset to defaults button
-- Generates a fully self-contained `.html` file with all data inline
+## 🌐 Deployment
 
-## Tech Stack
+The generated `portfolio.html` is a **single file** — deploy it anywhere:
 
-- **Three.js** (r128) — 3D background scene
-- **Font Awesome** 6.5.1 — icons
-- Vanilla HTML / CSS / JS — no frameworks, no build step, no dependencies
+<p align="center">
+  <code>GitHub Pages</code> •
+  <code>Netlify</code> •
+  <code>Vercel</code> •
+  <code>Any static file host</code>
+</p>
 
-## Deploy
+---
 
-The generated `portfolio.html` is a single file — deploy anywhere:
-- GitHub Pages
-- Netlify
-- Vercel
-- Any static file host
+<p align="center">
+  <sub>Built with ❤️ for engineers who ship.</sub>
+</p>
