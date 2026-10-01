@@ -1,5 +1,6 @@
 # Portfolio Website — Visual Editor + 3D Slide Deck
-💡 **Project Demo:** You can watch the video walkthrough of this repository directly on [LinkedIn]([https://lnkd.in/p/dtRaNwUJ](https://lnkd.in/p/dyziVJaz)).
+
+💡 **Project Demo:** You can watch the video walkthrough of this repository directly on [LinkedIn](https://lnkd.in/p/dyziVJaz).
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-production-ready-brightgreen" alt="Status">
