@@ -1,5 +1,13 @@
 # Portfolio Website — Visual Editor + 3D Slide Deck
 
+## Personal site
+
+`index.html` is a hand-built editorial portfolio — responsive, with light/dark
+themes and no slide-deck or 3D dependencies. It links to `Omkar_Amale_Resume.pdf`.
+
+The original visual editor remains in `editor.html`. The older Three.js deck
+build is preserved in the repository history.
+
 💡 **Project Demo:** You can watch the video walkthrough of this repository directly on [LinkedIn](https://lnkd.in/p/dyziVJaz).
 
 <p align="center">
